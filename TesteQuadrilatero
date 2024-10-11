@@ -9,7 +9,7 @@ public class TesteQuadrilatero {
         quadrilateros[2] = new Trapezio(1,2,3,4,3);
 
         for (Quadrilatero q: quadrilateros) {
-            System.out.println(q.calcularArea());
+            System.out.println(q + " " + q.calcularArea());
         }
     }
 }
