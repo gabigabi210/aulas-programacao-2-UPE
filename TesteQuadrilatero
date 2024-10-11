@@ -1,0 +1,14 @@
+package polimorfismo;
+
+public class TesteQuadrilatero {
+    public static void main(String[] args) {
+        Quadrilatero[] quadrilateros = new Quadrilatero[2];
+
+        quadrilateros[0] = new Retangulo(2,4);
+        quadrilateros[1] = new Retangulo(3,6);
+
+        for (Quadrilatero q: quadrilateros) {
+            System.out.println(q.calcularArea());
+        }
+    }
+}
