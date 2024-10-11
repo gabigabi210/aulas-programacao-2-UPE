@@ -1,0 +1,10 @@
+import javax.swing.JOptionPane;
+
+public class teste {
+    public static void main(String[] args) {
+        String valor = JOptionPane.showInputDialog("informe a temperatura em fahrenheit");
+        double farenheit = Double.parseDouble(valor);
+        double celsius = (farenheit - 32) * 5 / 9;
+        JOptionPane.showMessageDialog(null, "a temperatura em celsius é " + celsius, "conversao", JOptionPane.PLAIN_MESSAGE);
+    }
+}
