@@ -9,4 +9,7 @@ public class Retangulo extends Quadrilatero{
     public int calcularArea() {
         return this.getTamLado1() * this.getTamLado3();
     }
+    public String toString() {
+        return "Retangulo";
+    }
 }
