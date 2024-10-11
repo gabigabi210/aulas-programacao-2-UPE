@@ -1,0 +1,52 @@
+package polimorfismo;
+
+public abstract class Quadrilatero {
+    private int tamLado1;
+    private int tamLado2;
+    private int tamLado3;
+    private int tamLado4;
+
+    public Quadrilatero(int lado1, int lado2,int lado3, int lado4) {
+        this.tamLado1 = lado1;
+        this.tamLado2 = lado2;
+        this.tamLado3 = lado3;
+        this.tamLado4 = lado4;
+    }
+
+    public int calcularArea() {
+        return 0;
+    }
+
+    public int getTamLado4() {
+        return tamLado4;
+    }
+
+    public void setTamLado4(int tamLado4) {
+        this.tamLado4 = tamLado4;
+    }
+
+    public int getTamLado3() {
+        return tamLado3;
+    }
+
+    public void setTamLado3(int tamLado3) {
+        this.tamLado3 = tamLado3;
+    }
+
+    public int getTamLado2() {
+        return tamLado2;
+    }
+
+    public void setTamLado2(int tamLado2) {
+        this.tamLado2 = tamLado2;
+    }
+
+    public int getTamLado1() {
+        return tamLado1;
+    }
+
+    public void setTamLado1(int tamLado1) {
+        this.tamLado1 = tamLado1;
+    }
+
+}
