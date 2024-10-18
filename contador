@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class botao{
+    public static void main(String[] args) {
+        final int[] cont = {0};
+        JFrame janela = new JFrame("janela");
+        janela.setSize(300, 300);
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janela.setLayout(new FlowLayout());
+
+        JButton botaoSoma = new JButton("+");
+        JButton botaoSubtracao = new JButton("-");
+
+        JLabel contador = new JLabel("");
+
+        botaoSoma.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cont[0] += 1;
+                System.out.println(cont[0]);
+            }
+        });
+
+        botaoSubtracao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cont[0] -= 1;
+                System.out.println(cont[0]);
+            }
+        });
+        janela.add(botaoSoma);
+
+        janela.add(botaoSubtracao);
+
+        janela.setVisible(true);
+    }
+}
