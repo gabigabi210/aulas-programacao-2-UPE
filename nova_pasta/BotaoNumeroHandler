@@ -1,0 +1,14 @@
+package aula_calculadora;
+
+public class ControladorCalculadora {
+    private double operando1;
+    private Calculadora2 calculadora;
+    public void NumeroPressionado(double numero) {
+        this.operando1 = operando1 * 10 + numero;
+        this.calculadora.atualizarVisor(this.operando1);
+    }
+
+    public void setCalculadora(Calculadora2 calculadora) {
+        this.calculadora = calculadora;
+    }
+}
