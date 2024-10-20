@@ -1,0 +1,69 @@
+package aula_calculadora;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Calculadora2 {
+    private JTextField visor;
+    private JPanel panel1;
+    private JPanel panelprincipal;
+    private JButton Botao7;
+    private JButton Botao8;
+    private JButton Botao9;
+    private JButton BotaoDivisao;
+    private JButton Botao4;
+    private JButton Botao5;
+    private JButton Botao6;
+    private JButton BotaoMultiplicacao;
+    private JButton Botao1;
+    private JButton Botao2;
+    private JButton Botao3;
+    private JButton BotaoSubtracao;
+    private JButton Botao0;
+    private JButton BotaoResultado;
+    private JButton BotaoPonto;
+    private JButton BotaoAdicao;
+
+    private ControladorCalculadora controlador;
+
+    public Calculadora2(ControladorCalculadora controlador) {
+        this.controlador = controlador;
+        this.controlador.setCalculadora(this);
+        //cada um desses chama o cara que lida com os botoes de números eee fala pra ele qual numero foi apertado
+        Botao0.addActionListener(new BotaoNumeroHandler(0, controlador));
+        Botao1.addActionListener(new BotaoNumeroHandler(1, controlador));
+        Botao2.addActionListener(new BotaoNumeroHandler(2, controlador));
+        Botao3.addActionListener(new BotaoNumeroHandler(3, controlador));
+        Botao4.addActionListener(new BotaoNumeroHandler(4, controlador));
+        Botao5.addActionListener(new BotaoNumeroHandler(5, controlador));
+        Botao6.addActionListener(new BotaoNumeroHandler(6, controlador));
+        Botao7.addActionListener(new BotaoNumeroHandler(7, controlador));
+        Botao8.addActionListener(new BotaoNumeroHandler(8, controlador));
+        Botao9.addActionListener(new BotaoNumeroHandler(9, controlador));
+        //cada um desses chama o cara que lida com os botoes de operação eee fala pra ele qual operação foi apertada
+        BotaoAdicao.addActionListener(new BotaoOperacaoHandler('+', controlador));
+        BotaoSubtracao.addActionListener(new BotaoOperacaoHandler('-', controlador));
+        BotaoDivisao.addActionListener(new BotaoOperacaoHandler('/', controlador));
+        BotaoMultiplicacao.addActionListener(new BotaoOperacaoHandler('*', controlador));
+        // pede para o controlador retornar o resultado das operações acima
+        BotaoResultado.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controlador.Resultado();
+            }
+        });
+    }
+
+    public JPanel getPanel1() {
+        return panel1;
+    }
+    // atualiza a parte do visor para mostrar de forma grafica as operaçoes
+    public void atualizarVisorNum(double valor){
+        this.visor.setText(String.valueOf(valor));
+    }
+
+    public void atualizarVisorOperacao(char operacao){
+        this.visor.setText(String.valueOf(operacao));
+    }
+}
