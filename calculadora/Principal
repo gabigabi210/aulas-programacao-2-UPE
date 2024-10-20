@@ -1,0 +1,19 @@
+package aula_calculadora;
+
+import javax.swing.*;
+// esse é o arquivo executável
+public class Principal {
+    public static void main(String[] args) {
+        ControladorCalculadora controlador = new ControladorCalculadora();
+        Calculadora2 calc = new Calculadora2(controlador);
+
+        JFrame janela = new JFrame("calculadora");
+        janela.setContentPane(calc.getPanel1());
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //faz a janela ser do tamanho necessario para os componentes
+        janela.pack();
+        janela.setLocationRelativeTo(null);
+        janela.setVisible(true);
+    }
+}
