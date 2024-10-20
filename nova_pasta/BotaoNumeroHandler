@@ -2,18 +2,18 @@ package aula_calculadora;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+// esse arquivo serve como uma função para nao ser necessária a repetição da mesma etapa
 public class BotaoNumeroHandler implements ActionListener {
     private final int numero;
-    private ControladorCalculadora controlador;
-    public BotaoNumeroHandler(int numero, ControladorCalculadora controlador){
+    private ControladorCalculadora controlador; // chama o controlador para a conversa
+    public BotaoNumeroHandler(int numero, ControladorCalculadora controlador){ // registra os numeros mandados pra ele
         this.numero = numero;
         this.controlador = controlador;
     }
 
-
+    //parte da fofoca
     @Override
-    public void actionPerformed(ActionEvent e) {
-        controlador.NumeroPressionado(this.numero);
+    public void actionPerformed(ActionEvent e) {// diz para o programa "ei um botao de número foi pressionado ai da uma olhada"
+        controlador.NumeroPressionado(this.numero);// manda para o controlador qual o numero que a pessoa digitou
     }
 }
