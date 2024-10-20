@@ -4,12 +4,13 @@ public class ControladorCalculadora {
     private double operando1;
     private char operacao;
     boolean apertouOperacao = false;
+    boolean apertouResultado = false;
     private double operando2;
-    private double resultado;
 
     private Calculadora2 calculadora;
     public void NumeroPressionado(double numero) {
-        if (apertouOperacao == false) {
+        // faz com que o programa identifique se é o primeiro numero que a pessoa colocou
+        if (apertouOperacao == false && apertouResultado == false) {
             this.operando1 = operando1 * 10 + numero;
             this.calculadora.atualizarVisorNum(this.operando1);
         } else {
@@ -17,6 +18,7 @@ public class ControladorCalculadora {
             this.calculadora.atualizarVisorNum(this.operando2);
         }
     }
+    // identifica se a pessoa ja apertou algum botao de operação
     public void OperacaoPressionada(char operacao) {
         this.operacao = operacao;
         this.calculadora.atualizarVisorOperacao(this.operacao);
@@ -26,23 +28,25 @@ public class ControladorCalculadora {
     public void setCalculadora(Calculadora2 calculadora) {
         this.calculadora = calculadora;
     }
-
+    // caso a pessoa tenha apertado o botao de resultado
     public void Resultado(){
-        switch (operacao) {
+        switch (operacao) {  //executa a operação solicitada
             case '+':
-                resultado = operando1 + operando2;
+                operando1 = operando1 + operando2;  // atualiza apenas o operando1 para o caso da pessoa querer mais de uma operação
                 break;
             case '-':
-                resultado = operando1 - operando2;
+                operando1 = operando1 - operando2;
                 break;
             case '/':
-                resultado = operando1 / operando2;
+                operando1 = operando1 / operando2;
                 break;
             case '*':
-                resultado = operando1 * operando2;
+                operando1 = operando1 * operando2;
                 break;
         }
-        System.out.println(resultado);
-        this.calculadora.atualizarVisorNum(this.resultado);
+        System.out.println(operando1);
+        this.calculadora.atualizarVisorNum(this.operando1); // atualiza o visor com o resultado
+        apertouResultado = true;
+        this.operando2 = 0; // zera o operando2 para possibilitar mais de uma operação
     }
 }
