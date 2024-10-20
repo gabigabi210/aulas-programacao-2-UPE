@@ -2,19 +2,18 @@ package aula_calculadora;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+// esse arquivo serve como uma função para nao ser necessária a repetição da mesma etapa
 public class BotaoOperacaoHandler implements ActionListener {
 
     private final char operacao;
-    private ControladorCalculadora controlador;
-    public BotaoOperacaoHandler(char c, ControladorCalculadora controlador) {
+    private ControladorCalculadora controlador; // chama o controlador para a conversa
+    public BotaoOperacaoHandler(char c, ControladorCalculadora controlador) {// recebe a operação e registra na variável
         this.operacao = c;
         this.controlador = controlador;
     }
-
+    //parte da fofoca
     @Override
-    public void actionPerformed(ActionEvent e) {
-        controlador.OperacaoPressionada(this.operacao);
-        System.out.println(operacao);
+    public void actionPerformed(ActionEvent e) {// diz para o programa "ei um botao de operação foi pressionado ai da uma olhada"
+        controlador.OperacaoPressionada(this.operacao); // manda para o controlador a operação desejada
     }
 }
