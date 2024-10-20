@@ -1,0 +1,20 @@
+package aula_calculadora;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class BotaoOperacaoHandler implements ActionListener {
+
+    private final char operacao;
+    private ControladorCalculadora controlador;
+    public BotaoOperacaoHandler(char c, ControladorCalculadora controlador) {
+        this.operacao = c;
+        this.controlador = controlador;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        controlador.OperacaoPressionada(this.operacao);
+        System.out.println(operacao);
+    }
+}
