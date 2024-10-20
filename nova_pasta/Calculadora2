@@ -40,13 +40,27 @@ public class Calculadora2 {
         Botao7.addActionListener(new BotaoNumeroHandler(7, controlador));
         Botao8.addActionListener(new BotaoNumeroHandler(8, controlador));
         Botao9.addActionListener(new BotaoNumeroHandler(9, controlador));
+        BotaoAdicao.addActionListener(new BotaoOperacaoHandler('+', controlador));
+        BotaoSubtracao.addActionListener(new BotaoOperacaoHandler('-', controlador));
+        BotaoDivisao.addActionListener(new BotaoOperacaoHandler('/', controlador));
+        BotaoMultiplicacao.addActionListener(new BotaoOperacaoHandler('*', controlador));
+        BotaoResultado.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controlador.Resultado();
+            }
+        });
     }
 
     public JPanel getPanel1() {
         return panel1;
     }
 
-    public void atualizarVisor(double valor){
+    public void atualizarVisorNum(double valor){
         this.visor.setText(String.valueOf(valor));
+    }
+
+    public void atualizarVisorOperacao(char operacao){
+        this.visor.setText(String.valueOf(operacao));
     }
 }
