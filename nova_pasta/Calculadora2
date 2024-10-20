@@ -30,6 +30,7 @@ public class Calculadora2 {
     public Calculadora2(ControladorCalculadora controlador) {
         this.controlador = controlador;
         this.controlador.setCalculadora(this);
+        //cada um desses chama o cara que lida com os botoes de números eee fala pra ele qual numero foi apertado
         Botao0.addActionListener(new BotaoNumeroHandler(0, controlador));
         Botao1.addActionListener(new BotaoNumeroHandler(1, controlador));
         Botao2.addActionListener(new BotaoNumeroHandler(2, controlador));
@@ -40,10 +41,12 @@ public class Calculadora2 {
         Botao7.addActionListener(new BotaoNumeroHandler(7, controlador));
         Botao8.addActionListener(new BotaoNumeroHandler(8, controlador));
         Botao9.addActionListener(new BotaoNumeroHandler(9, controlador));
+        //cada um desses chama o cara que lida com os botoes de operação eee fala pra ele qual operação foi apertada
         BotaoAdicao.addActionListener(new BotaoOperacaoHandler('+', controlador));
         BotaoSubtracao.addActionListener(new BotaoOperacaoHandler('-', controlador));
         BotaoDivisao.addActionListener(new BotaoOperacaoHandler('/', controlador));
         BotaoMultiplicacao.addActionListener(new BotaoOperacaoHandler('*', controlador));
+        // pede para o controlador retornar o resultado das operações acima
         BotaoResultado.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -55,7 +58,7 @@ public class Calculadora2 {
     public JPanel getPanel1() {
         return panel1;
     }
-
+    // atualiza a parte do visor para mostrar de forma grafica as operaçoes
     public void atualizarVisorNum(double valor){
         this.visor.setText(String.valueOf(valor));
     }
