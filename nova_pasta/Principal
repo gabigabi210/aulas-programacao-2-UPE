@@ -1,8 +1,8 @@
 package aula_calculadora;
 
 import javax.swing.*;
-
-public class CalculadoraTeste {
+// esse é o arquivo executável
+public class Principal {
     public static void main(String[] args) {
         ControladorCalculadora controlador = new ControladorCalculadora();
         Calculadora2 calc = new Calculadora2(controlador);
