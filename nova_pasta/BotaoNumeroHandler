@@ -1,14 +1,19 @@
 package aula_calculadora;
 
-public class ControladorCalculadora {
-    private double operando1;
-    private Calculadora2 calculadora;
-    public void NumeroPressionado(double numero) {
-        this.operando1 = operando1 * 10 + numero;
-        this.calculadora.atualizarVisor(this.operando1);
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class BotaoNumeroHandler implements ActionListener {
+    private final int numero;
+    private ControladorCalculadora controlador;
+    public BotaoNumeroHandler(int numero, ControladorCalculadora controlador){
+        this.numero = numero;
+        this.controlador = controlador;
     }
 
-    public void setCalculadora(Calculadora2 calculadora) {
-        this.calculadora = calculadora;
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        controlador.NumeroPressionado(this.numero);
     }
 }
