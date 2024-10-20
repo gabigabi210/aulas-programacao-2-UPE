@@ -11,6 +11,7 @@ public class CalculadoraTeste {
         janela.setContentPane(calc.getPanel1());
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        //faz a janela ser do tamanho necessario para os componentes
         janela.pack();
         janela.setLocationRelativeTo(null);
         janela.setVisible(true);
