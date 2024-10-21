@@ -1,0 +1,40 @@
+package seminario;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class funcionalidades {
+    public int num = 0;
+    private JTextField visor;
+    private JButton BotaoAdicao;
+    private JButton BotaoSubtracao;
+    private JPanel principal;
+
+    public teste() {
+        BotaoAdicao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num += 1;
+                AtualizarVisor(num);
+            }
+        });
+
+        BotaoSubtracao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num -= 1;
+                AtualizarVisor(num);
+            }
+        });
+
+    }
+
+    public JPanel getPrincipal() {
+        return principal;
+    }
+
+    public void AtualizarVisor(int valor) {
+        this.visor.setText(String.valueOf(valor));
+    }
+}
