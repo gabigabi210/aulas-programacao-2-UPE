@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class main {
     public static void main(String[] args) {
-        teste contador = new teste();
+        teste contador = new funcionalidades();
 
         JFrame janela = new JFrame("Contador Simples");
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
