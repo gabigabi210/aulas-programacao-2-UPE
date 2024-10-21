@@ -1,0 +1,18 @@
+package seminario;
+
+import javax.swing.*;
+
+public class main {
+    public static void main(String[] args) {
+        teste contador = new teste();
+
+        JFrame janela = new JFrame("Contador Simples");
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janela.setContentPane(contador.getPrincipal()
+        );
+        janela.setSize(300, 300);
+        janela.setLocationRelativeTo(null);
+        janela.setVisible(true);
+    }
+
+}
